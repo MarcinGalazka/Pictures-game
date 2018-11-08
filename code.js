@@ -93,12 +93,6 @@ const guessPic = () => {
         alert('Przekroczyłeś dozwolona liczbę kliknięć!');
         return;
     }
-
-
-    console.log(divArray);
-    console.log(newArray);
-    console.log(clicks);
-
 }
 
 
