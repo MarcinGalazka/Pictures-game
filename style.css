@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: gray;
+}
+
+input.answerTxt {
+    outline: none;
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 22px;
+}
+
+section.picture {
+    width: 100vh;
+    height: 70vh;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 15px auto;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 5px 5px gray;
+    transition: .2s .5s;
+}
+
+div {
+    opacity: 1;
+    background-color: black;
+    flex-basis: 1;
+    flex-direction: row;
+    width: calc(100vh / 5);
+    border: solid white 1px;
+    cursor: pointer;
+    flex-grow: 1;
+    transition: linear .2s;
+}
+
+.visible {
+    opacity: 0;
+}
+
+div.visible {
+    opacity: 0;
+}
+
+h2 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+input[type=text] {
+    width: 40vw;
+    height: 30px;
+    margin: 0 auto;
+    display: block;
+}
+
+button {
+    margin: 0 35px;
+}
+
+/* 
+button.custom[type=submit]:focus {
+    outline: none !important;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    transform: scale(1) !important;
+} */
+
+.not-focusable:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+section.buttons {
+    width: 100vh;
+    margin: 2vh auto;
+    text-align: center;
+}
