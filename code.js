@@ -1,6 +1,6 @@
-const div = document.querySelector('div');
-const divArray = [...document.querySelectorAll('div')];
-let clicks = 0;
+const div = document.querySelector('div.pic');
+let divArray = [...document.querySelectorAll('div.pic')];
+let clicks = 1;
 const counter = document.querySelector('.counter');
 const left = document.querySelector('.left');
 const answerTxt = document.querySelector('.answerTxt');
@@ -8,8 +8,8 @@ const answerBtn = document.querySelector('.guess');
 const showBtn = document.querySelector('.show');
 const randomPicBtn = document.querySelector('.random');
 const image = document.querySelector('section.picture');
+let answer = answerTxt.value.toUpperCase();
 let indexArray = [];
-const newArray = [];
 let imagesList = [{
         img: "img/img0.jpg",
         name: 'upadek ikara',
@@ -42,29 +42,28 @@ const startPicture = () => {
 const choosePicture = () => {
     indexValue = randomIndex();
     image.style.backgroundImage = `url(img/img${indexValue}.jpg)`;
-    console.log(`url(img/img${indexValue}.jpg)`);
 }
 
 const hidePic = () => {
+    clicks = 1;
     divArray.forEach(item => {
-        item.classList.remove('visible')
+        item.classList.remove('visible');
     })
 }
 
 
 
-
 const checkAnswer = () => {
-    let answer = answerTxt.value.toUpperCase();
+    answer = answerTxt.value.toUpperCase();
     let correctAnswer = imagesList[indexValue].name.toUpperCase();
     if (answer === correctAnswer) {
+
         alert('Gratulacje! Odgadłeś hasło!');
         divArray.forEach(item => {
             item.classList.add('visible');
-            clicks = 0;
-            divArray = [...document.querySelectorAll('div')];
+            divArray = [...document.querySelectorAll('div.pic')];
+            answerTxt.value = "";
         });
-
         setTimeout(hidePic, 2000);
         setTimeout(choosePicture, 2000);
     } else {
@@ -78,20 +77,24 @@ const checkAnswer = () => {
 
 
 const guessPic = () => {
-
+    counter.textContent = `${clicks}/${(divArray.length+clicks-1)}`;
     let index = Math.floor(Math.random() * divArray.length);
+    let found = true; {
+        if (divArray.includes[index]) {
+            found == false;
+        } else {
+            found = true;
+            if (found = true) {
+                divArray[index].classList.add('visible');
+                clicks++;
+                divArray.splice(index, 1);
 
-    divArray[index].classList.add('visible');
-    clicks++;
-
-    divArray.splice(index, 1);
-    newArray.push(index, );
-
-    let arraysLength = divArray.length + newArray.length;
-    counter.textContent = `${clicks}/${arraysLength}`;
-    if (clicks >= arraysLength) {
+            }
+        }
+    }
+    if ((clicks) >= (divArray.length + clicks)) {
         alert('Przekroczyłeś dozwolona liczbę kliknięć!');
-        return;
+
     }
 }
 
@@ -100,6 +103,7 @@ showBtn.addEventListener('click', guessPic);
 answerBtn.addEventListener('click', checkAnswer);
 document.addEventListener('DOMContentLoaded', startPicture);
 randomPicBtn.addEventListener('click', choosePicture);
+
 
 
 //zmiany po kliknięciu w konkretny div
@@ -117,13 +121,3 @@ randomPicBtn.addEventListener('click', choosePicture);
 //         left.textContent = divArray.length - clicks;
 //     })
 // })
-
-
-// zabezpieczenie przed wylosowaniem tego samego diva
-// let found = false;
-// if (divArray[index].classList.contains('visible')) {
-//     index = Math.floor(Math.random() * divArray.length);
-//     found === false;
-// } else {
-//     found !== false
-// }
