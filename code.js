@@ -83,8 +83,8 @@ const guessPic = () => {
         if (divArray.includes[index]) {
             found == false;
         } else {
-            found = true;
-            if (found = true) {
+            found == true;
+            if (found) {
                 divArray[index].classList.add('visible');
                 clicks++;
                 divArray.splice(index, 1);
