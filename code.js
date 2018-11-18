@@ -9,14 +9,13 @@ const showBtn = document.querySelector('.show');
 const randomPicBtn = document.querySelector('.random');
 const image = document.querySelector('section.picture');
 let answer = answerTxt.value.toUpperCase();
-let indexArray = [];
 let imagesList = [{
         img: "img/img0.jpg",
         name: 'upadek ikara',
     },
     {
         img: "img/img1.jpg",
-        name: 'polowanie na dzika kalidońskiego',
+        name: 'narodziny wenus',
     },
     {
         img: "img/img2.jpg",
@@ -25,7 +24,32 @@ let imagesList = [{
     {
         img: "img/img3.jpg",
         name: 'babie lato',
-    }
+    },
+    {
+        img: "img/img4.jpg",
+        name: 'krzyk',
+    },
+    {
+        img: "img/img5.jpg",
+        name: 'trwałość pamięci',
+    },
+    {
+        img: "img/img6.jpg",
+        name: 'mona lisa',
+    },
+    {
+        img: "img/img7.jpg",
+        name: 'stworzenie adama',
+    },
+    {
+        img: "img/img8.jpg",
+        name: 'ostatnia wieczerza',
+    },
+    {
+        img: "img/img9.jpg",
+        name: 'bitwa pod grunwaldem',
+    },
+
 ];
 
 
@@ -40,11 +64,20 @@ const startPicture = () => {
 }
 
 const choosePicture = () => {
+    // let divArrayVisible = [...document.querySelectorAll('div.pic.visible')];
+    // for (let i = 0; i <= divArrayVisible.length; i++) {
+    //     divArrayVisible[i].classList.remove('visible');
+    // }
+    // divArray.forEach(item => {
+    //     item.classList.remove('visible')
+    // })
+    hidePic();
     indexValue = randomIndex();
     image.style.backgroundImage = `url(img/img${indexValue}.jpg)`;
 }
 
 const hidePic = () => {
+    divArray = [...document.querySelectorAll('div.pic')]
     clicks = 1;
     divArray.forEach(item => {
         item.classList.remove('visible');
@@ -61,14 +94,13 @@ const checkAnswer = () => {
         alert('Gratulacje! Odgadłeś hasło!');
         divArray.forEach(item => {
             item.classList.add('visible');
-            divArray = [...document.querySelectorAll('div.pic')];
             answerTxt.value = "";
         });
         setTimeout(hidePic, 2000);
         setTimeout(choosePicture, 2000);
     } else {
         alert('Nie zgadłeś! Może Uda Ci się następnym razem');
-        alert(`Poprawna odpowiedź to ${imagesList[indexValue].name.toUpperCase()}`)
+        // alert(`Poprawna odpowiedź to ${imagesList[indexValue].name.toUpperCase()}`)
         divArray.forEach(item => {
             item.classList.remove('visible');
         })
