@@ -7,6 +7,7 @@ const answerTxt = document.querySelector('.answerTxt');
 const answerBtn = document.querySelector('.guess');
 const showBtn = document.querySelector('.show');
 const randomPicBtn = document.querySelector('.random');
+const maxClicks = document.querySelector('.max-clicks');
 const image = document.querySelector('section.picture');
 let answer = answerTxt.value.toUpperCase();
 let imagesList = [{
@@ -71,6 +72,7 @@ const choosePicture = () => {
     // divArray.forEach(item => {
     //     item.classList.remove('visible')
     // })
+    counter.innerHTML = "0";
     hidePic();
     indexValue = randomIndex();
     image.style.backgroundImage = `url(img/img${indexValue}.jpg)`;

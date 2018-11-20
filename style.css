@@ -6,7 +6,9 @@
 }
 
 body {
-    background-color: gray;
+    background-image: url(img/las.jpg);
+    background-size: 100%;
+    background-position: center;
 }
 
 input.answerTxt {
@@ -22,11 +24,12 @@ section.picture {
     height: 70vh;
     background-image: none;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100%;
+    background-position: center;
     margin: 15px auto;
     display: flex;
     flex-wrap: wrap;
-    box-shadow: 0 0 5px 5px gray;
+    box-shadow: 0 0 5px 5px black;
     transition: .2s .5s;
 }
 
@@ -65,16 +68,9 @@ input[type=text] {
 
 button {
     margin: 0 35px;
+    width: 20%;
 }
 
-/* 
-button.custom[type=submit]:focus {
-    outline: none !important;
-    border: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    transform: scale(1) !important;
-} */
 
 .not-focusable:focus {
     outline: none;
